@@ -194,6 +194,9 @@ const ctx7 = canvas7.getContext('2d');
 ctx7.fillStyle = 'red';
 ctx7.fillRect(20, 20, 300, 200);
 
+ctx7.globalCompositeOperation = 'destination-over';
+// ctx7.globalCompositeOperation = 'source-out';
+
 ctx7.translate(50, 50);
 ctx7.rotate(calculateRadians(25));
 ctx7.scale(1.3, 1.3);
