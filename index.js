@@ -151,6 +151,8 @@ image2.addEventListener('load', () => {
   ctx4.drawImage(image2, 0, 0);
 });
 
+// ----------------------------------------------------------
+
 const canvas5 = document.getElementById('tutorial5');
 /**
  * @type {CanvasRenderingContext2D}
@@ -161,6 +163,8 @@ image3.src = './images/cat2.jpg';
 image3.addEventListener('load', () => {
   ctx5.drawImage(image3, 50, 0, 300, 300, 50, 50, 300, 300);
 });
+
+// ----------------------------------------------------------
 
 const canvas6 = document.getElementById('tutorial6');
 /**
@@ -185,6 +189,8 @@ ctx6.fillRect(45, 45, 60, 60);
 ctx6.restore();
 ctx6.fillRect(60, 60, 30, 30);
 
+// ----------------------------------------------------------
+
 const canvas7 = document.getElementById('tutorial7');
 /**
  * @type {CanvasRenderingContext2D}
@@ -204,6 +210,8 @@ ctx7.scale(1.3, 1.3);
 ctx7.fillStyle = 'blue';
 ctx7.fillRect(20, 20, 300, 200);
 
+// ----------------------------------------------------------
+
 const canvas8 = document.getElementById('tutorial8');
 /**
  * @type {CanvasRenderingContext2D}
@@ -219,6 +227,8 @@ image4.src = './images/cat1.jpg';
 image4.addEventListener('load', () => {
   ctx8.drawImage(image4, 0, 0);
 });
+
+// ----------------------------------------------------------
 
 const canvas9 = document.getElementById('tutorial9');
 /**
@@ -244,3 +254,22 @@ const draw = () => {
 };
 
 draw();
+
+// ----------------------------------------------------------
+
+const canvas10 = document.getElementById('tutorial10');
+/**
+ * @type {CanvasRenderingContext2D}
+ */
+const ctx10 = canvas10.getContext('2d');
+
+canvas10.addEventListener('click', (event) => {
+  const x = event.layerX;
+  const y = event.layerY;
+  const r = Math.round(Math.random() * 255);
+  const g = Math.round(Math.random() * 255);
+  const a = Math.round(Math.random() * 255);
+
+  ctx10.fillStyle = `rgb(${r},${g},${a})`;
+  ctx10.fillRect(x, y, 50, 50);
+});
