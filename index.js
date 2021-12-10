@@ -203,3 +203,19 @@ ctx7.scale(1.3, 1.3);
 
 ctx7.fillStyle = 'blue';
 ctx7.fillRect(20, 20, 300, 200);
+
+const canvas8 = document.getElementById('tutorial8');
+/**
+ * @type {CanvasRenderingContext2D}
+ */
+const ctx8 = canvas8.getContext('2d');
+
+ctx8.beginPath();
+ctx8.arc(250, 250, 150, calculateRadians(0), calculateRadians(360));
+ctx8.clip();
+
+const image4 = new Image();
+image4.src = './images/cat1.jpg';
+image4.addEventListener('load', () => {
+  ctx8.drawImage(image4, 0, 0);
+});
