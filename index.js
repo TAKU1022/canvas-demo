@@ -273,3 +273,30 @@ canvas10.addEventListener('click', (event) => {
   ctx10.fillStyle = `rgb(${r},${g},${a})`;
   ctx10.fillRect(x, y, 50, 50);
 });
+
+// ----------------------------------------------------------
+
+const canvas11 = document.getElementById('tutorial11');
+/**
+ * @type {CanvasRenderingContext2D}
+ */
+const ctx11 = canvas11.getContext('2d');
+
+const image5 = new Image();
+image5.src = './images/cat2.jpg';
+image5.addEventListener('load', () => {
+  ctx11.drawImage(image5, 0, 0);
+  image5.style.display = 'none';
+
+  const imageData = ctx11.getImageData(0, 0, canvas11.width, canvas11.height);
+  const Data = imageData.data;
+
+  for (let i = 0; i < Data.length; i += 4) {
+    let avg = (Data[i] + Data[i + 1] + Data[i + 2]) / 3;
+    Data[i] = avg;
+    Data[i + 1] = avg;
+    Data[i + 2] = avg;
+  }
+
+  ctx11.putImageData(imageData, 0, 0);
+});
