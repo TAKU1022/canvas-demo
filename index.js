@@ -161,3 +161,26 @@ image3.src = './images/cat2.jpg';
 image3.addEventListener('load', () => {
   ctx5.drawImage(image3, 50, 0, 300, 300, 50, 50, 300, 300);
 });
+
+const canvas6 = document.getElementById('tutorial6');
+/**
+ * @type {CanvasRenderingContext2D}
+ */
+const ctx6 = canvas6.getContext('2d');
+
+ctx6.fillStyle = 'red';
+ctx6.fillRect(0, 0, 150, 150);
+ctx6.save();
+
+ctx6.fillStyle = 'blue';
+ctx6.fillRect(15, 15, 120, 120);
+ctx6.save();
+
+ctx6.fillStyle = 'green';
+ctx6.fillRect(30, 30, 90, 90);
+
+ctx6.restore();
+ctx6.fillRect(45, 45, 60, 60);
+
+ctx6.restore();
+ctx6.fillRect(60, 60, 30, 30);
