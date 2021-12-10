@@ -184,3 +184,19 @@ ctx6.fillRect(45, 45, 60, 60);
 
 ctx6.restore();
 ctx6.fillRect(60, 60, 30, 30);
+
+const canvas7 = document.getElementById('tutorial7');
+/**
+ * @type {CanvasRenderingContext2D}
+ */
+const ctx7 = canvas7.getContext('2d');
+
+ctx7.fillStyle = 'red';
+ctx7.fillRect(20, 20, 300, 200);
+
+ctx7.translate(50, 50);
+ctx7.rotate(calculateRadians(25));
+ctx7.scale(1.3, 1.3);
+
+ctx7.fillStyle = 'blue';
+ctx7.fillRect(20, 20, 300, 200);
