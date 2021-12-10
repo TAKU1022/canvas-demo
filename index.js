@@ -219,3 +219,28 @@ image4.src = './images/cat1.jpg';
 image4.addEventListener('load', () => {
   ctx8.drawImage(image4, 0, 0);
 });
+
+const canvas9 = document.getElementById('tutorial9');
+/**
+ * @type {CanvasRenderingContext2D}
+ */
+const ctx9 = canvas9.getContext('2d');
+
+let x1 = 0;
+let y1 = 150;
+let speed = 1;
+
+const draw = () => {
+  if (x1 === ctx9.canvas.width) return;
+
+  window.requestAnimationFrame(draw);
+  ctx9.clearRect(0, 0, ctx9.canvas.width, ctx9.canvas.height);
+
+  ctx9.fillStyle = 'black';
+  ctx9.fillRect(0, 0, ctx9.canvas.width, ctx9.canvas.height);
+  ctx9.fillStyle = 'pink';
+  ctx9.fillRect(x1, y1, 200, 100);
+  x1 += speed;
+};
+
+draw();
